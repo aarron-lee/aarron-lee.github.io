@@ -2,3 +2,19 @@
   border-radius: 50%;
   max-width: 275px;
 }
+
+.project-image{
+  max-height: 250px;
+}
+
+@media(min-width:761px){
+  p.feature-list-item-body{
+    min-height: 140px;
+  }
+}
+
+@media(min-width:962px){
+  p.feature-list-item-body{
+    min-height: 150px;
+  }
+}
