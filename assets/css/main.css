@@ -2018,7 +2018,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #8cc9f0;
+			background-color: #018fea;
 			color: #ffffff !important;
 			box-shadow: none;
 		}
@@ -2232,8 +2232,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #8cc9f0;
-			box-shadow: 0 0 0 1px #8cc9f0;
+			border-color: #018fea;
+			box-shadow: 0 0 0 1px #018fea;
 		}
 
 	.select-wrapper:before {
@@ -2260,8 +2260,8 @@
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #8cc9f0;
-		box-shadow: 0 0 0 1px #8cc9f0;
+		border-color: #018fea;
+		box-shadow: 0 0 0 1px #018fea;
 	}
 
 	::-webkit-input-placeholder {
@@ -2361,7 +2361,7 @@
 		}
 
 		.icon.style5 {
-			color: #8cc9f0;
+			color: #018fea;
 		}
 
 		@media screen and (max-width: 1680px) {
@@ -2929,7 +2929,7 @@
 			}
 
 			.statistics li.style5 {
-				background-color: #8cc9f0;
+				background-color: #018fea;
 			}
 
 			.statistics li strong, .statistics li b {
@@ -3432,7 +3432,7 @@
 			#main input[type="button"].special,
 			#main button.special,
 			#main .button.special {
-				background-color: #8cc9f0;
+				background-color: #018fea;
 				color: #ffffff !important;
 				box-shadow: none;
 			}
@@ -3479,8 +3479,8 @@
 			#main input[type="email"]:focus,
 			#main select:focus,
 			#main textarea:focus {
-				border-color: #8cc9f0;
-				box-shadow: 0 0 0 1px #8cc9f0;
+				border-color: #018fea;
+				box-shadow: 0 0 0 1px #018fea;
 			}
 
 		#main .select-wrapper:before {
@@ -3507,8 +3507,8 @@
 
 		#main input[type="checkbox"]:focus + label:before,
 		#main input[type="radio"]:focus + label:before {
-			border-color: #8cc9f0;
-			box-shadow: 0 0 0 1px #8cc9f0;
+			border-color: #018fea;
+			box-shadow: 0 0 0 1px #018fea;
 		}
 
 		#main ::-webkit-input-placeholder {
@@ -3562,10 +3562,10 @@
 
 		#main header.major h2:after {
 			background-color: #dddddd;
-			background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-			background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+			background-image: -moz-linear-gradient(90deg, #efa8b0, #a89cc8, #018fea);
+			background-image: -webkit-linear-gradient(90deg, #efa8b0, #a89cc8, #018fea);
+			background-image: -ms-linear-gradient(90deg, #efa8b0, #a89cc8, #018fea);
+			background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #018fea);
 		}
 
 		#main table tbody tr {
