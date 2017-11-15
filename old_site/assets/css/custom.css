@@ -1,0 +1,30 @@
+#header > span > img.image-header{
+  border-radius: 50%;
+  max-width: 275px;
+}
+
+.project-image{
+  max-height: 250px;
+}
+
+@media(min-width:761px){
+  p.feature-list-item-body{
+    min-height: 150px;
+  }
+}
+
+@media(min-width:962px){
+  p.feature-list-item-body{
+    min-height: 190px;
+  }
+}
+
+.project-button{
+  margin: 5px;
+}
+
+.skill-image{
+  height: 100px;
+  width: auto;
+  margin: 20px;
+}
