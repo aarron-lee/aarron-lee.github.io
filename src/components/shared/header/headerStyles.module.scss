@@ -1,5 +1,48 @@
-.header {
-  font-weight: bold;
-  color: red;
-  font-size: 20px;
+@import "src/styles/core.scss";
+
+.navLink {
+  color: $white;
+  display: inline-block;
+  font-family: $default-font-family;
+  font-size: $font-size-medium;
+  font-weight: $fw-very-light;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navLinks {
+  list-style: none;
+}
+
+.nav {
+  float: right;
+}
+
+.title {
+  color: $white;
+  display: block;
+  font-family: $default-font-family;
+  font-size: $font-size-large;
+  font-weight: $fw-medium;
+  float: left;
+  height: 40px;
+  margin: 15px;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.headerContainer {
+  background: $header-bg-color;
+  height: $header-height;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
