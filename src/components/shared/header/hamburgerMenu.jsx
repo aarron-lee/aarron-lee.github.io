@@ -16,9 +16,9 @@ class HamburgerMenu extends Component {
   static Button = ({ children }) => {
     return (
       <HamburgerMenuContext.Consumer>
-        {({ toggleMenu }) => {
+        {({ toggleMenu, isOpen }) => {
           if (typeof children === "function") {
-            return children({ toggleMenu })
+            return children({ isOpen, toggleMenu })
           }
           return <button onClick={toggleMenu}>menu</button>
         }}
@@ -30,8 +30,15 @@ class HamburgerMenu extends Component {
     return (
       <HamburgerMenuContext.Consumer>
         {({ isOpen }) => {
-          if (isOpen) return <ul className={styles.menuContent}>{children}</ul>
-          return null
+          return (
+            <ul
+              className={`${styles.menuContent} ${
+                isOpen ? styles.menuOpen : ""
+              }`}
+            >
+              {children}
+            </ul>
+          )
         }}
       </HamburgerMenuContext.Consumer>
     )
