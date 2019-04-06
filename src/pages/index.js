@@ -1,3 +1,10 @@
 import React from "react"
+import Header from "../components/shared/header/header"
 
-export default () => <div>Hello world!</div>
+const Layout = () => (
+  <div>
+    <Header />
+  </div>
+)
+
+export default Layout

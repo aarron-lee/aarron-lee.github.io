@@ -1,6 +1,7 @@
 module.exports = {
-  siteMetaData: {
+  siteMetadata: {
     title: "AL's Blog",
+    siteUrl: "https://www.aarronlee.com",
     description: "Some random thoughts, ideas, and musings",
   },
   plugins: [
