@@ -1,0 +1,27 @@
+@import "src/styles/core.scss";
+
+.menuContent {
+  background: $header-bg-color;
+  left: 0;
+  position: fixed;
+  top: $header-height;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 100;
+  list-style: none;
+}
+
+.menuItem {
+  background: $header-bg-color;
+  border-top: 2px solid $header-border-color;
+  color: $white;
+  font-family: $default-font-family;
+  font-size: $font-size-medium;
+  font-weight: $fw-very-light;
+  padding: 15px;
+  width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
+}

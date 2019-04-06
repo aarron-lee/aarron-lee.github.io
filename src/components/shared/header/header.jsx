@@ -23,7 +23,11 @@ const Header = ({ isMobile }) => (
             </nav>
           )}
         </header>
-        <HamburgerMenu.Content>hello there</HamburgerMenu.Content>
+
+        <HamburgerMenu.Content>
+          <HamburgerMenu.Item>Posts</HamburgerMenu.Item>
+          <HamburgerMenu.Item>About</HamburgerMenu.Item>
+        </HamburgerMenu.Content>
       </HamburgerMenu>
     )}
   </HeaderQuery>

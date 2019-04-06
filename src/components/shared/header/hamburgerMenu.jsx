@@ -1,11 +1,17 @@
 import React, { Component } from "react"
 
+import styles from "./hamburgerMenuStyles.module.scss"
+
 const HamburgerMenuContext = React.createContext()
 
 class HamburgerMenu extends Component {
   state = {
     isOpen: false,
   }
+
+  static Item = ({ children }) => (
+    <li className={styles.menuItem}>{children}</li>
+  )
 
   static Button = ({ children }) => {
     return (
@@ -24,7 +30,7 @@ class HamburgerMenu extends Component {
     return (
       <HamburgerMenuContext.Consumer>
         {({ isOpen }) => {
-          if (isOpen) return children
+          if (isOpen) return <ul className={styles.menuContent}>{children}</ul>
           return null
         }}
       </HamburgerMenuContext.Consumer>
