@@ -3,21 +3,28 @@ import HeaderQuery from "./queries/headerQuery"
 
 import styles from "./headerStyles.module.scss"
 import withIsMobile from "../../util/withIsMobile"
+import HamburgerMenu from "./hamburgerMenu"
 
 const Header = ({ isMobile }) => (
   <HeaderQuery>
     {({ title }) => (
-      <header className={styles.headerContainer}>
-        <a className={styles.title} href="#">
-          {title}
-        </a>
-        <nav className={styles.nav}>
-          <ul className={styles.navLink}>
-            <li className={styles.navLink}>Posts</li>
-            <li className={styles.navLink}>About</li>
-          </ul>
-        </nav>
-      </header>
+      <HamburgerMenu>
+        <header className={styles.headerContainer}>
+          {isMobile && <HamburgerMenu.Button />}
+          <a className={styles.title} href="#">
+            {title}
+          </a>
+          {!isMobile && (
+            <nav className={styles.nav}>
+              <ul className={styles.navLink}>
+                <li className={styles.navLink}>Posts</li>
+                <li className={styles.navLink}>About</li>
+              </ul>
+            </nav>
+          )}
+        </header>
+        <HamburgerMenu.Content>hello there</HamburgerMenu.Content>
+      </HamburgerMenu>
     )}
   </HeaderQuery>
 )
