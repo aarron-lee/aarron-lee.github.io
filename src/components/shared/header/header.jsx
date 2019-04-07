@@ -3,14 +3,15 @@ import HeaderQuery from "./queries/headerQuery"
 
 import styles from "./headerStyles.module.scss"
 import withIsMobile from "../../util/withIsMobile"
-import HamburgerMenu from "./hamburgerMenu"
+import Modal, { MODAL_TYPES } from "../../presentation/Modal/modal"
 
 const Header = ({ isMobile }) => (
   <HeaderQuery>
     {({ title }) => (
-      <HamburgerMenu>
+      <Modal type={MODAL_TYPES.SLIDE_IN}>
+        <Modal.Content>content</Modal.Content>
         <header className={styles.headerContainer}>
-          {isMobile && <HamburgerMenu.Button />}
+          {isMobile && <Modal.OpenButton>Open</Modal.OpenButton>}
           <a className={styles.title} href="#">
             {title}
           </a>
@@ -23,12 +24,7 @@ const Header = ({ isMobile }) => (
             </nav>
           )}
         </header>
-
-        <HamburgerMenu.Content>
-          <HamburgerMenu.Item>Posts</HamburgerMenu.Item>
-          <HamburgerMenu.Item>About</HamburgerMenu.Item>
-        </HamburgerMenu.Content>
-      </HamburgerMenu>
+      </Modal>
     )}
   </HeaderQuery>
 )
