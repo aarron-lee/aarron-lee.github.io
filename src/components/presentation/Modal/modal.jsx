@@ -1,41 +1,29 @@
 import React, { Component } from "react"
 
 import ModalContent from "./parts/modalContent"
+import CloseModalButton from "./parts/closeModalButton/closeModalButton"
+import OpenModalButton from "./parts/openModalButton/openModalButton"
 
 import { MODAL_SIZES } from "./parts/centerModalContent/centerModalContent"
 import { SLIDE_DIRECTIONS } from "./parts/slideOutModalContent/slideOutModalContent"
 
 export const ModalContext = React.createContext()
 
+export { SLIDE_DIRECTIONS, MODAL_SIZES }
+
 export const MODAL_TYPES = {
   CENTER: Symbol("center"),
   SLIDE_IN: Symbol("slideIn"),
 }
 
-export { SLIDE_DIRECTIONS, MODAL_SIZES }
-
-const OpenButton = ({ children, ...otherProps }) => (
-  <ModalContext.Consumer>
-    {({ openModal }) => {
-      if (typeof children === "function") return children({ openModal })
-
-      return (
-        <button {...otherProps} onClick={openModal}>
-          {children}
-        </button>
-      )
-    }}
-  </ModalContext.Consumer>
-)
-
 class Modal extends Component {
+  static CloseButton = CloseModalButton
+  static OpenButton = OpenModalButton
+  static Content = ModalContent
+
   state = {
     isOpen: false,
   }
-
-  static OpenButton = OpenButton
-
-  static Content = ModalContent
 
   setStatus = newStatus => () => this.setState({ isOpen: newStatus })
 
