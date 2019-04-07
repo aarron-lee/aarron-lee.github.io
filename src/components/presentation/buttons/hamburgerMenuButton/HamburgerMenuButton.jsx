@@ -18,9 +18,9 @@ const HamburgerMenuButton = ({
       viewBox="0 0 100 100"
     >
       <g>
-        <path class="line line-1" d="M5 13h90v14H5z" />
-        <path class="line line-2" d="M5 43h90v14H5z" />
-        <path class="line line-3" d="M5 73h90v14H5z" />
+        <path className="line line-1" d="M5 13h90v14H5z" />
+        <path className="line line-2" d="M5 43h90v14H5z" />
+        <path className="line line-3" d="M5 73h90v14H5z" />
       </g>
     </svg>
   </div>
