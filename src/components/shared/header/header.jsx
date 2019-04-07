@@ -3,7 +3,7 @@ import HeaderQuery from "./queries/headerQuery"
 
 import styles from "./headerStyles.module.scss"
 import withIsMobile from "../../util/withIsMobile"
-import Modal, { MODAL_TYPES } from "../../presentation/Modal/modal"
+import Modal, { MODAL_TYPES } from "../../presentation/modal/modal"
 
 const Header = ({ isMobile }) => {
   if (isMobile) {
