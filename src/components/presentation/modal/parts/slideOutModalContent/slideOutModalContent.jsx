@@ -8,7 +8,13 @@ export const SLIDE_DIRECTIONS = {
   RIGHT: Symbol("right"),
 }
 
-const SlideOutModalContent = ({ direction, isOpen, closeModal, children }) => {
+const SlideOutModalContent = ({
+  direction,
+  isOpen,
+  closeModal,
+  children,
+  className,
+}) => {
   const slideInDirectionStyle =
     direction === SLIDE_DIRECTIONS.LEFT
       ? slideOutStyles.modalLeft
@@ -16,7 +22,7 @@ const SlideOutModalContent = ({ direction, isOpen, closeModal, children }) => {
 
   const modalContentStyle = `${slideInDirectionStyle} ${
     slideOutStyles.ModalContent
-  } ${isOpen ? slideOutStyles.ModalContentOpen : ""}`
+  } ${isOpen ? slideOutStyles.ModalContentOpen : ""} ${className}`
 
   return (
     <Portal>

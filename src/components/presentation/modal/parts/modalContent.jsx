@@ -5,7 +5,7 @@ import SlideOutModalContent from "./slideOutModalContent/slideOutModalContent"
 
 import { ModalContext, MODAL_TYPES } from "../modal.jsx"
 
-const ModalContent = ({ children }) => {
+const ModalContent = ({ children, className }) => {
   return (
     <ModalContext.Consumer>
       {({ isOpen, closeModal, type, direction, contentSize }) => {
@@ -16,6 +16,7 @@ const ModalContent = ({ children }) => {
                 direction={direction}
                 isOpen={isOpen}
                 closeModal={closeModal}
+                className={className}
               >
                 {children}
               </SlideOutModalContent>
@@ -26,6 +27,7 @@ const ModalContent = ({ children }) => {
                 isOpen={isOpen}
                 closeModal={closeModal}
                 contentSize={contentSize}
+                className={className}
               >
                 {children}
               </CenterModalContent>
@@ -36,6 +38,11 @@ const ModalContent = ({ children }) => {
       }}
     </ModalContext.Consumer>
   )
+}
+
+ModalContent.defaultProps = {
+  children: null,
+  className: "",
 }
 
 export default ModalContent

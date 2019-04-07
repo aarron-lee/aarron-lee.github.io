@@ -12,11 +12,11 @@ const Header = ({ isMobile }) => {
       <HeaderQuery>
         {({ title }) => (
           <Modal type={MODAL_TYPES.SLIDE_IN}>
-            <Modal.Content>
-              <Modal.CancelButton />
-              <ul>
-                <li>Posts</li>
-                <li>About</li>
+            <Modal.Content className={styles.mobileMenuContainer}>
+              <Modal.CancelButton color={"white"} />
+              <ul className={styles.mobileMenuItems}>
+                <li className={styles.mobileNavLink}>Posts</li>
+                <li className={styles.mobileNavLink}>About</li>
               </ul>
             </Modal.Content>
             <header className={styles.headerContainer}>
@@ -28,7 +28,7 @@ const Header = ({ isMobile }) => {
                   />
                 )}
               </Modal.OpenButton>
-              <a className={styles.title} href="#">
+              <a className={styles.title} href="/">
                 {title}
               </a>
             </header>
@@ -47,7 +47,7 @@ const Header = ({ isMobile }) => {
           }`}
         >
           <div className={styles.buttonsContainer}>
-            <a className={styles.title} href="#">
+            <a className={styles.title} href="/">
               {title}
             </a>
             <nav className={styles.nav}>
