@@ -1,4 +1,6 @@
 import React from "react"
+
+import CenterModalContent from "./centerModalContent"
 import SlideOutModalContent from "./slideOutModalContent"
 
 import { ModalContext, MODAL_TYPES } from "../modal.jsx"
@@ -6,7 +8,7 @@ import { ModalContext, MODAL_TYPES } from "../modal.jsx"
 const ModalContent = ({ children }) => {
   return (
     <ModalContext.Consumer>
-      {({ isOpen, closeModal, type, direction }) => {
+      {({ isOpen, closeModal, type, direction, contentSize }) => {
         switch (type) {
           case MODAL_TYPES.SLIDE_IN:
             return (
@@ -17,6 +19,16 @@ const ModalContent = ({ children }) => {
               >
                 {children}
               </SlideOutModalContent>
+            )
+          case MODAL_TYPES.CENTER:
+            return (
+              <CenterModalContent
+                isOpen={isOpen}
+                closeModal={closeModal}
+                contentSize={contentSize}
+              >
+                {children}
+              </CenterModalContent>
             )
           default:
             return <div />

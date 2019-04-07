@@ -2,6 +2,7 @@ import React, { Component } from "react"
 
 import ModalContent from "./parts/modalContent"
 
+import { MODAL_SIZES } from "./parts/centerModalContent"
 import { SLIDE_DIRECTIONS } from "./parts/slideOutModalContent"
 
 export const ModalContext = React.createContext()
@@ -11,7 +12,7 @@ export const MODAL_TYPES = {
   SLIDE_IN: Symbol("slideIn"),
 }
 
-export { SLIDE_DIRECTIONS }
+export { SLIDE_DIRECTIONS, MODAL_SIZES }
 
 const OpenButton = ({ children, ...otherProps }) => (
   <ModalContext.Consumer>
@@ -39,7 +40,7 @@ class Modal extends Component {
   setStatus = newStatus => () => this.setState({ isOpen: newStatus })
 
   render() {
-    const { type, children, direction } = this.props
+    const { type, children, direction, contentSize } = this.props
     return (
       <ModalContext.Provider
         value={{
@@ -48,6 +49,7 @@ class Modal extends Component {
           closeModal: this.setStatus(false),
           type: type || MODAL_TYPES.CENTER,
           direction: direction || SLIDE_DIRECTIONS.LEFT,
+          contentSize: contentSize || MODAL_SIZES.MEDIUM,
         }}
       >
         {children}
