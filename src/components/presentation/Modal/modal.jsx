@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import ModalContent from "./parts/modalContent"
 import CloseModalButton from "./parts/closeModalButton/closeModalButton"
 import OpenModalButton from "./parts/openModalButton/openModalButton"
+import CancelModalButton from "./parts/cancelButton/cancelModalButton"
 
 import { MODAL_SIZES } from "./parts/centerModalContent/centerModalContent"
 import { SLIDE_DIRECTIONS } from "./parts/slideOutModalContent/slideOutModalContent"
@@ -20,6 +21,7 @@ class Modal extends Component {
   static CloseButton = CloseModalButton
   static OpenButton = OpenModalButton
   static Content = ModalContent
+  static CancelButton = CancelModalButton
 
   state = {
     isOpen: false,
