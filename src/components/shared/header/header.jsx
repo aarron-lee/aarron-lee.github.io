@@ -41,16 +41,22 @@ const Header = ({ isMobile }) => {
   return (
     <HeaderQuery>
       {({ title }) => (
-        <header className={styles.headerContainer}>
-          <a className={styles.title} href="#">
-            {title}
-          </a>
-          <nav className={styles.nav}>
-            <ul className={styles.navLink}>
-              <li className={styles.navLink}>Posts</li>
-              <li className={styles.navLink}>About</li>
-            </ul>
-          </nav>
+        <header
+          className={`${styles.headerContainer} ${
+            styles.headerContainerNonMobile
+          }`}
+        >
+          <div className={styles.buttonsContainer}>
+            <a className={styles.title} href="#">
+              {title}
+            </a>
+            <nav className={styles.nav}>
+              <ul className={styles.navLink}>
+                <li className={styles.navLink}>Posts</li>
+                <li className={styles.navLink}>About</li>
+              </ul>
+            </nav>
+          </div>
         </header>
       )}
     </HeaderQuery>

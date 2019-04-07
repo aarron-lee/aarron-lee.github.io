@@ -49,3 +49,17 @@ $screen-tiny: 320px;
 
 // header
 $header-height: 55px;
+
+@mixin mediaWidth {
+  max-width: 70%;
+  @media (max-width: $screen-xlarge) {
+    max-width: 70%;
+  }
+  @media (max-width: $screen-large) {
+    max-width: 80%;
+  }
+  @media (max-width: $screen-medium) {
+    max-width: 100%;
+    margin: 0 16px;
+  }
+}

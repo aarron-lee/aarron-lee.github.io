@@ -22,9 +22,13 @@
   float: left;
 }
 
+.buttonsContainer {
+  width: 100%;
+  @include mediaWidth();
+}
+
 .title {
   color: $white;
-  display: block;
   font-family: $default-font-family;
   font-size: $font-size-large;
   font-weight: $fw-medium;
@@ -44,10 +48,15 @@
 
 .headerContainer {
   background: $header-bg-color;
+  display: flex;
   height: $header-height;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
+}
+
+.headerContainerNonMobile {
+  justify-content: center;
 }
