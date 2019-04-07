@@ -1,7 +1,7 @@
 import React from "react"
 
-import CenterModalContent from "./centerModalContent"
-import SlideOutModalContent from "./slideOutModalContent"
+import CenterModalContent from "./centerModalContent/centerModalContent"
+import SlideOutModalContent from "./slideOutModalContent/slideOutModalContent"
 
 import { ModalContext, MODAL_TYPES } from "../modal.jsx"
 

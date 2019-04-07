@@ -2,8 +2,8 @@ import React, { Component } from "react"
 
 import ModalContent from "./parts/modalContent"
 
-import { MODAL_SIZES } from "./parts/centerModalContent"
-import { SLIDE_DIRECTIONS } from "./parts/slideOutModalContent"
+import { MODAL_SIZES } from "./parts/centerModalContent/centerModalContent"
+import { SLIDE_DIRECTIONS } from "./parts/slideOutModalContent/slideOutModalContent"
 
 export const ModalContext = React.createContext()
 
@@ -47,9 +47,9 @@ class Modal extends Component {
           isOpen: this.state.isOpen,
           openModal: this.setStatus(true),
           closeModal: this.setStatus(false),
-          type: type || MODAL_TYPES.CENTER,
-          direction: direction || SLIDE_DIRECTIONS.LEFT,
-          contentSize: contentSize || MODAL_SIZES.MEDIUM,
+          type: type,
+          direction: direction,
+          contentSize: contentSize,
         }}
       >
         {children}
@@ -61,6 +61,8 @@ class Modal extends Component {
 Modal.defaultProps = {
   children: null,
   type: MODAL_TYPES.CENTER,
+  direction: SLIDE_DIRECTIONS.LEFT,
+  contentSize: MODAL_SIZES.MEDIUM,
 }
 
 export default Modal
