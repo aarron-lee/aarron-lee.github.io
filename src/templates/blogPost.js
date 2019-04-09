@@ -5,6 +5,11 @@ import Page from "./page"
 import { graphql, Link } from "gatsby"
 import Card from "../components/presentation/card/card"
 
+const navLinkStyle = {
+  textDecoration: "none",
+  color: "inherit",
+}
+
 export default function Template({ data, ...otherProps }) {
   const {
     pageContext: { next, previous },
@@ -14,7 +19,7 @@ export default function Template({ data, ...otherProps }) {
   return (
     <Page>
       <Card>
-        <div className="blog-post-container">
+        <div className="blog-post-container" style={{ width: "100%" }}>
           <div className="blog-post">
             <h1>{frontmatter.title}</h1>
             <h5>
@@ -26,22 +31,27 @@ export default function Template({ data, ...otherProps }) {
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </div>
-          {next && (
-            <>
-              <Link to={next.frontmatter.path}>
-                {"<"}
-                {next.frontmatter.title}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              width: "100%",
+            }}
+          >
+            {next ? (
+              <Link to={next.frontmatter.path} style={navLinkStyle}>
+                ←{next.frontmatter.title}
               </Link>
-            </>
-          )}
-          {previous && (
-            <>
-              <Link to={previous.frontmatter.path}>
-                {previous.frontmatter.title}
-                {">"}
+            ) : (
+              "← No More Posts"
+            )}
+            {previous && (
+              <Link to={previous.frontmatter.path} style={navLinkStyle}>
+                {previous.frontmatter.title} →
               </Link>
-            </>
-          )}
+            )}
+          </div>
         </div>
       </Card>
     </Page>
