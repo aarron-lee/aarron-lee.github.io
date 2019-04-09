@@ -1,6 +1,6 @@
 ---
 path: "/second-post"
-date: "2019-04-08"
+date: "2019-04-07"
 title: "second post"
 tags: ["gatsbyjs", "markdown"]
 excerpt: "A preview of my second post"

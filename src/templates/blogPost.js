@@ -23,15 +23,17 @@ export default function Template({ data, ...otherProps }) {
         </div>
         {next && (
           <>
-            next
-            <Link to={next.frontmatter.path}>{next.frontmatter.title}</Link>
+            <Link to={next.frontmatter.path}>
+              {"<"}
+              {next.frontmatter.title}
+            </Link>
           </>
         )}
         {previous && (
           <>
-            previous
             <Link to={previous.frontmatter.path}>
               {previous.frontmatter.title}
+              {">"}
             </Link>
           </>
         )}
