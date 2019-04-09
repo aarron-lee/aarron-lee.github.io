@@ -4,7 +4,9 @@ import { ThemeContext } from "./themeProvider"
 
 const ThemeConsumer = ({ children }) => (
   <ThemeContext.Consumer>
-    {({ themeStyles, toggleTheme }) => children({ themeStyles, toggleTheme })}
+    {({ currentColor, themeStyles, toggleTheme }) =>
+      children({ themeStyles, toggleTheme, currentColor })
+    }
   </ThemeContext.Consumer>
 )
 

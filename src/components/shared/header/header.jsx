@@ -5,6 +5,7 @@ import styles from "./headerStyles.module.scss"
 import withIsMobile from "../../util/withIsMobile"
 import Modal, { MODAL_TYPES } from "../../presentation/modal/modal"
 import HamburgerMenuButton from "../../presentation/buttons/hamburgerMenuButton/HamburgerMenuButton"
+import ThemeSwitch from "../../util/theme/themeSwitch"
 
 const Header = ({ themeStyles, isMobile }) => {
   if (isMobile) {
@@ -17,6 +18,9 @@ const Header = ({ themeStyles, isMobile }) => {
               <ul className={styles.mobileMenuItems}>
                 <li className={styles.mobileNavLink}>Posts</li>
                 <li className={styles.mobileNavLink}>About</li>
+                <li className={styles.mobileNavLink}>
+                  <ThemeSwitch />
+                </li>
               </ul>
             </Modal.Content>
             <header
@@ -59,6 +63,7 @@ const Header = ({ themeStyles, isMobile }) => {
               </ul>
             </nav>
           </div>
+          <ThemeSwitch className={styles.themeSwitch} />
         </header>
       )}
     </HeaderQuery>

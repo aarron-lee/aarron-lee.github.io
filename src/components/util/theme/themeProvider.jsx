@@ -39,7 +39,7 @@ class ThemeProvider extends Component {
     return (
       <ThemeContext.Provider
         value={{
-          color: currentColor,
+          currentColor,
           themeStyles,
           toggleTheme: this.toggleTheme,
         }}
