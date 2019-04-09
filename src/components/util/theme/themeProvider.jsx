@@ -8,13 +8,18 @@ export const THEMES = {
   DARK: "dark",
 }
 
+const LOCALSTORAGE_KEY = "currentThemeColor"
+
 export const ThemeContext = React.createContext({ theme: THEMES.LIGHT })
 
 class ThemeProvider extends Component {
   constructor(props) {
     super(props)
+    if (window.localStorage) {
+      var initialColor = localStorage.getItem(LOCALSTORAGE_KEY)
+    }
     this.state = {
-      currentColor: this.props.color,
+      currentColor: initialColor || THEMES.LIGHT,
     }
   }
 
@@ -22,8 +27,12 @@ class ThemeProvider extends Component {
     this.setState(prevState => {
       switch (prevState.currentColor) {
         case THEMES.LIGHT:
+          if (window.localStorage)
+            localStorage.setItem(LOCALSTORAGE_KEY, THEMES.DARK)
           return { currentColor: THEMES.DARK }
         case THEMES.DARK:
+          if (window.localStorage)
+            localStorage.setItem(LOCALSTORAGE_KEY, THEMES.LIGHT)
           return { currentColor: THEMES.LIGHT }
         default:
           return
@@ -52,7 +61,6 @@ class ThemeProvider extends Component {
 
 ThemeProvider.defaultProps = {
   children: null,
-  color: THEMES.LIGHT,
 }
 
 export default ThemeProvider
