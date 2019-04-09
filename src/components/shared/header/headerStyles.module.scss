@@ -30,8 +30,8 @@
 }
 
 .buttonsContainer {
+  max-width: 52rem;
   width: 100%;
-  @include mediaWidth();
 }
 
 .title {
