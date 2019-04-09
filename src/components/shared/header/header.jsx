@@ -6,6 +6,8 @@ import Modal, { MODAL_TYPES } from "../../presentation/modal/modal"
 import HamburgerMenuButton from "../../presentation/buttons/hamburgerMenuButton/HamburgerMenuButton"
 import ThemeSwitch from "../../util/theme/themeSwitch"
 
+const MOBILE_SWITCH_COLOR = "#282d33"
+
 const Header = ({ headerColor, isMobile }) => {
   if (isMobile) {
     return (
@@ -18,7 +20,10 @@ const Header = ({ headerColor, isMobile }) => {
                 <li className={styles.mobileNavLink}>Posts</li>
                 <li className={styles.mobileNavLink}>About</li>
                 <li className={styles.mobileNavLink}>
-                  <ThemeSwitch />
+                  <ThemeSwitch
+                    onColor={MOBILE_SWITCH_COLOR}
+                    offColor={MOBILE_SWITCH_COLOR}
+                  />
                 </li>
               </ul>
             </Modal.Content>
