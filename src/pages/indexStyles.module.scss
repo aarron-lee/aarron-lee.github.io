@@ -1,0 +1,11 @@
+@import "src/styles/core.scss";
+
+.cardStyles {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.cardTitle {
+  text-decoration: none;
+}

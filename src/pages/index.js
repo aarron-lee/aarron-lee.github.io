@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby"
 
 import "../styles/prism-atom-dark.css"
 
+import styles from "./indexStyles.module.scss"
+
 import Page from "../templates/page"
 import Card from "../components/presentation/card/card"
 
@@ -16,7 +18,7 @@ export const query = graphql`
           frontmatter {
             title
             path
-            date
+            date(formatString: "MMMM DD, YYYY")
             excerpt
           }
         }
@@ -32,11 +34,22 @@ const Layout = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(edge => edge.node)
   return (
     <Page>
-      {posts.map((post, idx) => (
-        <Card key={idx}>
-          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-        </Card>
-      ))}
+      {posts.map((post, idx) => {
+        const { timeToRead } = post
+        const { title, path, date, excerpt } = post.frontmatter
+
+        return (
+          <Card key={idx} className={styles.cardStyles}>
+            <Link to={path} className={styles.cardTitle}>
+              <h2 style={{ margin: "14px 0px" }}>{title}</h2>
+            </Link>
+            <h6 style={{ margin: "0" }}>
+              {date} - Time to Read: {timeToRead} min
+            </h6>
+            <p>{excerpt}</p>
+          </Card>
+        )
+      })}
     </Page>
   )
 }
