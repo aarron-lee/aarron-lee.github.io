@@ -13,4 +13,7 @@ $header-color: #282d33;
 .cardStyles {
   background-color: $header-color;
   color: $white;
+  & h2 {
+    color: $white;
+  }
 }

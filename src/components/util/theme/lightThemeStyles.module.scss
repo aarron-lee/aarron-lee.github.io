@@ -13,4 +13,7 @@ $background-color: #dae0e7;
 .cardStyles {
   background-color: $white;
   color: $black;
+  & h2 {
+    color: $header-bg-color;
+  }
 }

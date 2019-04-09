@@ -40,7 +40,7 @@ const Layout = ({ data }) => {
 
         return (
           <Card key={idx} className={styles.cardStyles}>
-            <Link to={path} className={styles.cardTitle}>
+            <Link to={path}>
               <h2 style={{ margin: "14px 0px" }}>{title}</h2>
             </Link>
             <h6 style={{ margin: "0" }}>
