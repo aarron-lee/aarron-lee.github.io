@@ -6,7 +6,6 @@ import { graphql, Link } from "gatsby"
 import Card from "../components/presentation/card/card"
 
 const navLinkStyle = {
-  textDecoration: "none",
   color: "inherit",
 }
 
@@ -37,6 +36,7 @@ export default function Template({ data, ...otherProps }) {
               flexDirection: "row",
               justifyContent: "space-between",
               width: "100%",
+              margin: "25px 0px",
             }}
           >
             {next ? (
@@ -44,7 +44,7 @@ export default function Template({ data, ...otherProps }) {
                 ←{next.frontmatter.title}
               </Link>
             ) : (
-              "← No More Posts"
+              <div style={{ opacity: "0.3" }}>← No More Posts</div>
             )}
             {previous && (
               <Link to={previous.frontmatter.path} style={navLinkStyle}>
