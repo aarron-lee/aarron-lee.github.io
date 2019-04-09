@@ -1,8 +1,18 @@
 const path = require("path")
 
+const createAboutPage = ({ createPage }) => {
+  const aboutPage = path.resolve("src/about/index.js")
+  createPage({
+    path: "/about",
+    component: aboutPage,
+  })
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve("src/templates/blogPost.js")
+
+  createAboutPage({ createPage })
 
   return graphql(`
     query {
