@@ -50,6 +50,8 @@ $screen-tiny: 320px;
 // header
 $header-height: 55px;
 
+$content-max-width: 52rem;
+
 @mixin mediaWidth {
   max-width: 70%;
   @media (max-width: $screen-xlarge) {

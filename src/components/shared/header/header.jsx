@@ -2,7 +2,6 @@ import React from "react"
 import HeaderQuery from "./queries/headerQuery"
 
 import styles from "./headerStyles.module.scss"
-import withIsMobile from "../../util/withIsMobile"
 import Modal, { MODAL_TYPES } from "../../presentation/modal/modal"
 import HamburgerMenuButton from "../../presentation/buttons/hamburgerMenuButton/HamburgerMenuButton"
 import ThemeSwitch from "../../util/theme/themeSwitch"
@@ -68,4 +67,4 @@ const Header = ({ headerColor, isMobile }) => {
   )
 }
 
-export default withIsMobile(Header)
+export default Header
