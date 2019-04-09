@@ -2,11 +2,17 @@
 
 .card {
   padding: 2rem;
-  margin: 8px 0px;
+  margin: 6px 0px;
   border-radius: $card-border-radius;
   box-shadow: $card-shadow;
   font-family: $default-font-family;
   display: flex;
-  width: 100%;
   max-width: $content-max-width;
+}
+.cardDesktop {
+  width: 100%;
+}
+
+.cardMobile {
+  width: 80%;
 }

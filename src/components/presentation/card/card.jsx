@@ -5,8 +5,14 @@ import ThemeConsumer from "../../util/theme/themeConsumer"
 
 const Card = ({ children }) => (
   <ThemeConsumer>
-    {({ themeStyles: { cardStyles } }) => (
-      <div className={`${styles.card} ${cardStyles}`}>{children}</div>
+    {({ themeStyles: { cardStyles }, isMobile }) => (
+      <div
+        className={`${styles.card} ${
+          isMobile ? styles.cardMobile : styles.cardDesktop
+        } ${cardStyles}`}
+      >
+        {children}
+      </div>
     )}
   </ThemeConsumer>
 )

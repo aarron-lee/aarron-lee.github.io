@@ -33,10 +33,8 @@ const Layout = ({ data }) => {
   return (
     <Page>
       {posts.map((post, idx) => (
-        <Card>
-          <Link to={post.frontmatter.path} key={idx}>
-            {post.frontmatter.title}
-          </Link>
+        <Card key={idx}>
+          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
         </Card>
       ))}
     </Page>

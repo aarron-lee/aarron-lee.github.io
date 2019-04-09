@@ -3,6 +3,8 @@ import React, { Component } from "react"
 import darkThemeStyles from "./darkThemeStyles.module.scss"
 import lightThemeStyles from "./lightThemeStyles.module.scss"
 
+import withIsMobile from "../withIsMobile"
+
 export const THEMES = {
   LIGHT: "light",
   DARK: "dark",
@@ -43,7 +45,7 @@ class ThemeProvider extends Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, isMobile } = this.props
     const { currentColor } = this.state
     let themeStyles =
       currentColor === THEMES.LIGHT ? lightThemeStyles : darkThemeStyles
@@ -53,6 +55,7 @@ class ThemeProvider extends Component {
           currentColor,
           themeStyles,
           toggleTheme: this.toggleTheme,
+          isMobile,
         }}
       >
         {children}
@@ -65,4 +68,4 @@ ThemeProvider.defaultProps = {
   children: null,
 }
 
-export default ThemeProvider
+export default withIsMobile(ThemeProvider)

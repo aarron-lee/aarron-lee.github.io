@@ -3,14 +3,13 @@ import React from "react"
 import Header from "../components/shared/header/header"
 import ThemeProvider from "../components/util/theme/themeProvider"
 import ThemeConsumer from "../components/util/theme/themeConsumer"
-import withIsMobile from "../components/util/withIsMobile"
 
 import styles from "./pageStyles.module.scss"
 
-const Page = ({ isMobile, children }) => (
+const Page = ({ children }) => (
   <ThemeProvider>
     <ThemeConsumer>
-      {({ themeStyles }) => (
+      {({ themeStyles, isMobile }) => (
         <div>
           <Header headerColor={themeStyles.headerColor} isMobile={isMobile} />
           <div
@@ -26,4 +25,4 @@ const Page = ({ isMobile, children }) => (
   </ThemeProvider>
 )
 
-export default withIsMobile(Page)
+export default Page
