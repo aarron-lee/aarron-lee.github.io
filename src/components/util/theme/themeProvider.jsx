@@ -24,20 +24,22 @@ class ThemeProvider extends Component {
   }
 
   toggleTheme = () => {
-    this.setState(prevState => {
-      switch (prevState.currentColor) {
-        case THEMES.LIGHT:
-          if (window.localStorage)
-            localStorage.setItem(LOCALSTORAGE_KEY, THEMES.DARK)
-          return { currentColor: THEMES.DARK }
-        case THEMES.DARK:
-          if (window.localStorage)
-            localStorage.setItem(LOCALSTORAGE_KEY, THEMES.LIGHT)
-          return { currentColor: THEMES.LIGHT }
-        default:
-          return
-      }
-    })
+    window.requestAnimationFrame(() =>
+      this.setState(prevState => {
+        switch (prevState.currentColor) {
+          case THEMES.LIGHT:
+            if (window.localStorage)
+              localStorage.setItem(LOCALSTORAGE_KEY, THEMES.DARK)
+            return { currentColor: THEMES.DARK }
+          case THEMES.DARK:
+            if (window.localStorage)
+              localStorage.setItem(LOCALSTORAGE_KEY, THEMES.LIGHT)
+            return { currentColor: THEMES.LIGHT }
+          default:
+            return
+        }
+      })
+    )
   }
 
   render() {

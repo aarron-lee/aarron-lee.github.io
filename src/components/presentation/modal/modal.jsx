@@ -27,7 +27,8 @@ class Modal extends Component {
     isOpen: false,
   }
 
-  setStatus = newStatus => () => this.setState({ isOpen: newStatus })
+  setStatus = newStatus => () =>
+    window.requestAnimationFrame(() => this.setState({ isOpen: newStatus }))
 
   render() {
     const { type, children, direction, contentSize } = this.props

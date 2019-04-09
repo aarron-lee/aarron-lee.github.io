@@ -20,7 +20,7 @@ const Page = ({ isMobile, children }) => (
             }}
             className={themeStyles.backgroundColor}
           >
-            {children}
+            <main style={{ marginTop: "55px" }}>{children}</main>
           </div>
         </div>
       )}
