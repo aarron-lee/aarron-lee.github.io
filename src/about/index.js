@@ -5,11 +5,7 @@ import "../styles/prism-atom-dark.css"
 import Page from "../templates/page"
 
 const Layout = () => {
-  return (
-    <Page>
-      <div style={{ marginTop: "55px" }}>about me</div>
-    </Page>
-  )
+  return <Page>about me</Page>
 }
 
 export default Layout

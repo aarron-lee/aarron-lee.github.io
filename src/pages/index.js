@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import "../styles/prism-atom-dark.css"
 
 import Page from "../templates/page"
+import Card from "../components/presentation/card/card"
 
 export const query = graphql`
   query {
@@ -31,13 +32,13 @@ const Layout = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(edge => edge.node)
   return (
     <Page>
-      <div style={{ marginTop: "55px" }}>
-        {posts.map((post, idx) => (
+      {posts.map((post, idx) => (
+        <Card>
           <Link to={post.frontmatter.path} key={idx}>
             {post.frontmatter.title}
           </Link>
-        ))}
-      </div>
+        </Card>
+      ))}
     </Page>
   )
 }
