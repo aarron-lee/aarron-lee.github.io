@@ -2,11 +2,12 @@ import React from "react"
 
 import Page from "./page"
 
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
+export default function Template({ data, ...otherProps }) {
+  const {
+    pageContext: { next, previous },
+  } = otherProps
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   return (
@@ -20,6 +21,20 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
+        {next && (
+          <>
+            next
+            <Link to={next.frontmatter.path}>{next.frontmatter.title}</Link>
+          </>
+        )}
+        {previous && (
+          <>
+            previous
+            <Link to={previous.frontmatter.path}>
+              {previous.frontmatter.title}
+            </Link>
+          </>
+        )}
       </div>
     </Page>
   )

@@ -17,6 +17,18 @@ exports.createPages = ({ graphql, actions }) => {
               path
             }
           }
+          next {
+            frontmatter {
+              path
+              title
+            }
+          }
+          previous {
+            frontmatter {
+              path
+              title
+            }
+          }
         }
         pageInfo {
           hasNextPage
@@ -27,11 +39,16 @@ exports.createPages = ({ graphql, actions }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
+
     result.data.allMarkdownRemark.edges.forEach(edge => {
       createPage({
         path: edge.node.frontmatter.path,
         component: blogPostTemplate,
-        context: { pathSlug: edge.node.frontmatter.path },
+        context: {
+          pathSlug: edge.node.frontmatter.path,
+          next: edge.next,
+          previous: edge.previous,
+        },
       })
     })
   })
