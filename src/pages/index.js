@@ -8,7 +8,7 @@ const Layout = () => (
     <ThemeConsumer>
       {({ themeStyles }) => (
         <>
-          <Header themeStyles={themeStyles} />
+          <Header headerColor={themeStyles.headerColor} />
         </>
       )}
     </ThemeConsumer>

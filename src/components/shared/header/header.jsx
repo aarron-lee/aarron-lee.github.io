@@ -7,7 +7,7 @@ import Modal, { MODAL_TYPES } from "../../presentation/modal/modal"
 import HamburgerMenuButton from "../../presentation/buttons/hamburgerMenuButton/HamburgerMenuButton"
 import ThemeSwitch from "../../util/theme/themeSwitch"
 
-const Header = ({ themeStyles, isMobile }) => {
+const Header = ({ headerColor, isMobile }) => {
   if (isMobile) {
     return (
       <HeaderQuery>
@@ -23,9 +23,7 @@ const Header = ({ themeStyles, isMobile }) => {
                 </li>
               </ul>
             </Modal.Content>
-            <header
-              className={`${styles.headerContainer} ${themeStyles.headerColor}`}
-            >
+            <header className={`${styles.headerContainer} ${headerColor}`}>
               <Modal.OpenButton>
                 {({ openModal }) => (
                   <HamburgerMenuButton
@@ -50,7 +48,7 @@ const Header = ({ themeStyles, isMobile }) => {
         <header
           className={`${styles.headerContainer} ${
             styles.headerContainerNonMobile
-          } ${themeStyles.headerColor}`}
+          } ${headerColor}`}
         >
           <div className={styles.buttonsContainer}>
             <a className={styles.title} href="/">
