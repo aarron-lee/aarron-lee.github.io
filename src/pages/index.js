@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
+import "../styles/prism-atom-dark.css"
+
 import Page from "../templates/page"
 
 export const query = graphql`
