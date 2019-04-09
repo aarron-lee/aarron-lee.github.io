@@ -5,6 +5,7 @@ import styles from "./headerStyles.module.scss"
 import Modal, { MODAL_TYPES } from "../../presentation/modal/modal"
 import HamburgerMenuButton from "../../presentation/buttons/hamburgerMenuButton/HamburgerMenuButton"
 import ThemeSwitch from "../../util/theme/themeSwitch"
+import { Link } from "gatsby"
 
 const MOBILE_SWITCH_COLOR = "#282d33"
 
@@ -17,8 +18,16 @@ const Header = ({ headerColor, isMobile }) => {
             <Modal.Content className={styles.mobileMenuContainer}>
               <Modal.CancelButton color={"white"} />
               <ul className={styles.mobileMenuItems}>
-                <li className={styles.mobileNavLink}>Posts</li>
-                <li className={styles.mobileNavLink}>About</li>
+                <li className={styles.mobileNavLink}>
+                  <Link to="/" className={styles.mobileNavLink}>
+                    Blog
+                  </Link>
+                </li>
+                <li className={styles.mobileNavLink}>
+                  <Link to="/about" className={styles.mobileNavLink}>
+                    About
+                  </Link>
+                </li>
                 <li className={styles.mobileNavLink}>
                   <ThemeSwitch
                     onColor={MOBILE_SWITCH_COLOR}
@@ -55,13 +64,21 @@ const Header = ({ headerColor, isMobile }) => {
           } ${headerColor}`}
         >
           <div className={styles.buttonsContainer}>
-            <a className={styles.title} href="/">
+            <Link to={"/"} className={styles.title}>
               {title}
-            </a>
+            </Link>
             <nav className={styles.nav}>
               <ul className={styles.navLink}>
-                <li className={styles.navLink}>Posts</li>
-                <li className={styles.navLink}>About</li>
+                <li className={styles.navLink}>
+                  <Link to="/" className={styles.navLink}>
+                    Blog
+                  </Link>
+                </li>
+                <li className={styles.navLink}>
+                  <Link to="/about" className={styles.navLink}>
+                    About
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
