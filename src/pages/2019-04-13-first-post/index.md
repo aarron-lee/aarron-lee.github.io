@@ -1,9 +1,9 @@
 ---
-path: "/first-post"
-date: "2019-04-06"
-title: "First Blog Post"
+path: "/plex-docker-compose"
+date: "2019-04-13"
+title: "Running a Plex Media Server with Docker Compose"
 tags: ["gatsbyjs", "markdown"]
-excerpt: "A preview of my first post"
+excerpt: "Because when you have some spare computers lying around, why not?"
 ---
 
 This is my first post using gatsby.js
