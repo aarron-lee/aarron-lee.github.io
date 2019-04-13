@@ -4,12 +4,20 @@ import Page from "./page"
 import Card from "../components/presentation/card/card"
 
 const AllTagsTemplate = ({ data, pageContext }) => {
+  const { tags } = pageContext
   return (
     <Page>
       <Card>
-        {pageContext.tags.map((tag, idx) => (
-          <span key={idx}>{tag}</span>
-        ))}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h2>All Tags</h2>
+          <ul>
+            {tags.map((tag, idx) => (
+              <li key={idx}>
+                <Link to={`tags/${tag}`}>{tag}</Link>{" "}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Card>
     </Page>
   )

@@ -4,14 +4,21 @@ import Page from "./page"
 import Card from "../components/presentation/card/card"
 
 const SingleTagIndex = ({ data, pageContext }) => {
+  const { posts, tagName } = pageContext
   return (
     <Page>
       <Card>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <h2>{pageContext.tagName}</h2>
-          {pageContext.posts.map((post, idx) => (
-            <pre key={idx}>{JSON.stringify(post)}</pre>
-          ))}
+          <h2>Posts related to {tagName}</h2>
+          <ul>
+            {posts.map((post, idx) => (
+              <li key={idx}>
+                <Link to={post.node.frontmatter.path}>
+                  {post.node.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Card>
     </Page>
