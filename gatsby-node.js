@@ -20,7 +20,6 @@ const createTagPages = ({ createPage, posts }) => {
     if (tags) {
       tags.forEach(tag => {
         if (!postsByTag[tag]) postsByTag[tag] = []
-
         postsByTag[tag].push(post)
       })
     }
@@ -34,6 +33,19 @@ const createTagPages = ({ createPage, posts }) => {
     context: {
       tags: tags.sort(),
     },
+  })
+
+  tags.forEach(tagName => {
+    const posts = postsByTag[tagName]
+
+    createPage({
+      path: `/tags/${tagName}`,
+      component: singleTagIndexTemplate,
+      context: {
+        posts,
+        tagName,
+      },
+    })
   })
 }
 
