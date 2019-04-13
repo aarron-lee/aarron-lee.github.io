@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Page from "./page"
 import Card from "../components/presentation/card/card"
 
-const AllTagsTemplate = ({ data, pageContext }) => {
+const AllTagsTemplate = ({ pageContext }) => {
   const { tags } = pageContext
   return (
     <Page>

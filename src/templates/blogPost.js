@@ -46,10 +46,12 @@ export default function Template({ data, ...otherProps }) {
             ) : (
               <div style={{ opacity: "0.3" }}>← No More Posts</div>
             )}
-            {previous && (
+            {previous ? (
               <Link to={previous.frontmatter.path} style={navLinkStyle}>
                 {previous.frontmatter.title} →
               </Link>
+            ) : (
+              <div style={{ opacity: "0.3" }}>No More Posts →</div>
             )}
           </div>
         </div>

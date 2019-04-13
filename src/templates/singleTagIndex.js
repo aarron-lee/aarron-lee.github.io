@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Page from "./page"
 import Card from "../components/presentation/card/card"
 
-const SingleTagIndex = ({ data, pageContext }) => {
+const SingleTagIndex = ({ pageContext }) => {
   const { posts, tagName } = pageContext
   console.log(posts)
   return (
