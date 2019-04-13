@@ -11,12 +11,14 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <title>AL's blog</title>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes} style={{ margin: "0", padding: "0" }}>
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
-          This app works best with JavaScript enabled.
+          I use javascript a lot as a programmer. I'm not sure what you'd expect
+          to see here without javascript enabled.
         </noscript>
         <div
           key={`body`}
