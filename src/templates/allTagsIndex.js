@@ -10,13 +10,15 @@ const AllTagsTemplate = ({ data, pageContext }) => {
       <Card>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h2>All Tags</h2>
-          <ul>
-            {tags.map((tag, idx) => (
-              <li key={idx}>
-                <Link to={`tags/${tag}`}>{tag}</Link>{" "}
-              </li>
-            ))}
-          </ul>
+          <div style={{ backgroundColor: "white", paddingRight: "25px" }}>
+            <ul style={{ listStyle: "none", margin: "10px", padding: "0" }}>
+              {tags.map((tag, idx) => (
+                <li key={idx}>
+                  <Link to={`tags/${tag}`}>{tag}</Link>{" "}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Card>
     </Page>

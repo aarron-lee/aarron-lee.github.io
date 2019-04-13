@@ -65,6 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
               path
               title
               tags
+              date(formatString: "MM/DD/YYYY")
             }
           }
         }
