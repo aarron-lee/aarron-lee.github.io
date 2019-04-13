@@ -4,7 +4,7 @@ export const MAX_MOBILE_WIDTH = 768
 
 const withIsMobile = Component => {
   return class IsMobileProvider extends React.Component {
-    state = { isMobile: window.innerWidth <= MAX_MOBILE_WIDTH }
+    state = { isMobile: false }
 
     resizeListener = () => {
       const { isMobile } = this.state
