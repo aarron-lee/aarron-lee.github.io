@@ -4,12 +4,13 @@ import Page from "./page"
 
 import { graphql, Link } from "gatsby"
 import Card from "../components/presentation/card/card"
+import TagButton from "../components/presentation/buttons/tagButton/tagButton"
 
 const TagsList = ({ tags = [] }) =>
   tags.map((tag, idx) => {
     return (
       <Fragment key={idx}>
-        <Link to={`tags/${tag}`}>{tag}</Link>{" "}
+        <TagButton tag={tag} />{" "}
       </Fragment>
     )
   })
