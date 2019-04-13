@@ -22,6 +22,9 @@ const SingleTagIndex = ({ pageContext }) => {
               ))}
             </ul>
           </div>
+          <Link to={"/tags"} style={{ color: "inherit", margin: "25px 0px" }}>
+            ← Browse by tags
+          </Link>
         </div>
       </Card>
     </Page>

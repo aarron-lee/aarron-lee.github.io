@@ -1,9 +1,18 @@
-import React from "react"
+import React, { Fragment } from "react"
 
 import Page from "./page"
 
 import { graphql, Link } from "gatsby"
 import Card from "../components/presentation/card/card"
+
+const TagsList = ({ tags = [] }) =>
+  tags.map((tag, idx) => {
+    return (
+      <Fragment key={idx}>
+        <Link to={`tags/${tag}`}>{tag}</Link>{" "}
+      </Fragment>
+    )
+  })
 
 const navLinkStyle = {
   color: "inherit",
@@ -25,6 +34,11 @@ export default function Template({ data, ...otherProps }) {
               {frontmatter.date} - Time To Read: {markdownRemark.timeToRead}{" "}
               mins
             </h5>
+            {frontmatter.tags && frontmatter.tags.length && (
+              <div style={{ fontSize: "13px" }}>
+                <strong>tags:</strong> <TagsList tags={frontmatter.tags} />
+              </div>
+            )}
             <div
               className="blog-post-content"
               dangerouslySetInnerHTML={{ __html: html }}
@@ -69,6 +83,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
     }
   }
