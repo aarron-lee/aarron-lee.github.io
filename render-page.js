@@ -3617,6 +3617,7 @@ var withIsMobile = function withIsMobile(Component) {
     var _proto = IsMobileProvider.prototype;
 
     _proto.componentDidMount = function componentDidMount() {
+      this.resizeListener();
       window.addEventListener("resize", this.resizeListener);
     };
 
