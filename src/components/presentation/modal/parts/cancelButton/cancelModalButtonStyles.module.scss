@@ -1,0 +1,10 @@
+@import "src/styles/core.scss";
+
+.cancelButton {
+  float: right;
+  margin: 10px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.3;
+  }
+}

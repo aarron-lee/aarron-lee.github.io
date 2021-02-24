@@ -1,0 +1,15 @@
+@import "src/styles/core.scss";
+
+.tagButton {
+  font-family: inherit;
+  font-size: $font-size-small;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid;
+  padding: 2px 3px;
+  border-radius: 4px;
+  opacity: 0.8;
+  &:hover {
+    opacity: 0.3;
+  }
+}

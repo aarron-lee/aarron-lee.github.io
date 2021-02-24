@@ -1,0 +1,87 @@
+@import "src/styles/core.scss";
+
+.navLink {
+  color: $white;
+  display: inline-block;
+  font-family: $default-font-family;
+  font-size: $font-size-medium;
+  font-weight: $fw-very-light;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mobileNavLink {
+  color: $white;
+  font-family: $default-font-family;
+  font-size: $font-size-medium;
+  font-weight: $fw-very-light;
+  margin: 25px 0px;
+  text-decoration: none;
+}
+
+.navLinks {
+  list-style: none;
+}
+
+.nav {
+  float: left;
+}
+
+.buttonsContainer {
+  max-width: $content-max-width;
+  width: 100%;
+}
+
+.title {
+  color: $white;
+  font-family: $default-font-family;
+  font-size: $font-size-large;
+  font-weight: $fw-medium;
+  float: left;
+  height: 40px;
+  margin: 15px;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+.themeSwitch {
+  float: right;
+  height: 40px;
+  margin: 10px;
+}
+
+.mobileMenuItems {
+  margin-top: 60px;
+  list-style: none;
+}
+
+.mobileMenuContainer {
+  background-color: $black !important;
+  color: $white !important;
+}
+
+.mobileMenuButton {
+  margin: 12px 0px 10px 8px;
+}
+
+.headerContainer {
+  display: flex;
+  height: $header-height;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.headerContainerNonMobile {
+  justify-content: center;
+}

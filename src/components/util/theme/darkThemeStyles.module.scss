@@ -1,0 +1,19 @@
+@import "src/styles/core.scss";
+
+$header-color: #282d33;
+
+.headerColor {
+  background-color: $header-color;
+}
+
+.backgroundColor {
+  background-color: $black;
+}
+
+.cardStyles {
+  background-color: $header-color;
+  color: $white;
+  & h2 {
+    color: $white;
+  }
+}

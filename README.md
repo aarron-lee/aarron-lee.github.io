@@ -1,3 +1,5 @@
-compiled code from https://github.com/aarron-lee/aarronlee.com
+# aarronlee.com
 
-hosted via Github Pages
+My personal site, created using https://github.com/gatsbyjs/gatsby-starter-blog.
+
+To run locally, run `npm install`, followed by `npm run develop`. Then open `https://localhost:8000`

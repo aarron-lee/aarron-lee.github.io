@@ -1,0 +1,67 @@
+// fonts
+$default-font-family: "Helvetica", "Verdana", sans-serif;
+
+// font sizes
+$font-size-small: 10px;
+$font-size-medium: 17px;
+$font-size-large: 20px;
+$font-size-largest: 36px;
+
+// font weights
+$fw-very-light: 100;
+$fw-light: 300;
+$fw-medium: 500;
+$fw-heavy: 700;
+
+// colors
+$blue: #248ec4;
+$purple: #3f51b5;
+$white: #fff;
+$gray: rgb(236, 236, 236);
+$black: #000;
+
+$transparent-black: rgba(0, 0, 0, 0.57);
+
+$header-bg-color: $blue;
+$header-border-color: #2386c8;
+
+// padding
+$default-top-padding: 16px;
+$default-right-padding: 16px;
+$default-bottom-padding: 16px;
+$default-left-padding: 16px;
+$default-padding: $default-bottom-padding $default-right-padding
+  $default-bottom-padding $default-left-padding;
+
+// card shadow
+$card-large-shadow: 0 0 14px rgba(0, 0, 0, 0.24),
+  0 14px 28px rgba(0, 0, 0, 0.48);
+$card-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+$card-border-radius: 2px;
+
+// screen breakpoints
+$screen-xlarge: 1440px;
+$screen-large: 1200px;
+$screen-medium: 992px;
+$screen-small: 768px;
+$screen-tiny: 320px;
+
+// header
+$header-height: 55px;
+
+$content-max-width: 38rem;
+
+@mixin mediaWidth {
+  max-width: 70%;
+  @media (max-width: $screen-xlarge) {
+    max-width: 70%;
+  }
+  @media (max-width: $screen-large) {
+    max-width: 80%;
+  }
+  @media (max-width: $screen-medium) {
+    max-width: 100%;
+    margin: 0 16px;
+  }
+}
