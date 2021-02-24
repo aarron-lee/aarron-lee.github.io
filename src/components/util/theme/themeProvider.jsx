@@ -17,8 +17,9 @@ export const ThemeContext = React.createContext({ theme: THEMES.DARK })
 class ThemeProvider extends Component {
   constructor(props) {
     super(props)
+    // initialize to dark theme
     this.state = {
-      currentColor: null,
+      currentColor: THEMES.DARK,
     }
   }
 
