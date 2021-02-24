@@ -12,7 +12,7 @@ export const THEMES = {
 
 const LOCALSTORAGE_KEY = "currentThemeColor"
 
-export const ThemeContext = React.createContext({ theme: THEMES.LIGHT })
+export const ThemeContext = React.createContext({ theme: THEMES.DARK })
 
 class ThemeProvider extends Component {
   constructor(props) {
