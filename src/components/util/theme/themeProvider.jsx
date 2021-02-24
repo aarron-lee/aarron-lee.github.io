@@ -44,10 +44,6 @@ class ThemeProvider extends Component {
     )
   }
 
-  componentDidMount() {
-    this.setState({ currentColor: window && window.__initialColor })
-  }
-
   render() {
     const { children, isMobile } = this.props
     const { currentColor } = this.state
