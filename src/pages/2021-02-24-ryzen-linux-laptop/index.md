@@ -30,9 +30,19 @@ After scouring the internet, a post on reddit led me to the Lenovo [ThinkBook 13
 - HDMI
 - 2x USB-A 3.0 ports
 
-While the display might seem like overkill for a 13.3" Laptop, how I see it is that I could always reduce the resolution via software. Meanwhile, the reverse (buying a lower resolution laptop, and then use xrandr to increase resolution via software) is a solution I'd rather not ideal with because there's more annoyances and friction.
+While the display might seem like overkill for a 13.3" Laptop, how I see it is that I could always reduce the resolution via software. Meanwhile, the reverse (buying a lower resolution laptop, and then use xrandr to increase resolution via software) is a solution I'd rather not deal with because there's more annoyances and friction.
 
-After dual booting PopOS 20.10, the laptop has been running mostly well (I am getting 8+ hours of battery life a day). One nasty issue I had to deal with was the trackpad causing the laptop to crash on shutdown or reboot, and somehow persist across reboots. The solution was to manually update the linux kernel to 5.10.17 with ubuntu [mainline](https://github.com/bkw777/mainline).
+After dual booting PopOS 20.10, the laptop has been running mostly well (I am getting 8+ hours of battery life a day). One nasty issue I had to deal with was the trackpad causing the laptop to crash on shutdown or reboot, and somehow persist across reboots.
+
+If you see an error like the following when shutting down, the problem is the trackpad:
+
+```
+i2c_designware AMDI0010:00: controller timed out
+i2c_designware AMDI0010:00: controller timed out
+i2c_designware AMDI0010:00: controller timed out
+```
+
+The solution is to manually update the linux kernel, it's fixed in newer versions. I personally updated to 5.10.17 with ubuntu [mainline](https://github.com/bkw777/mainline).
 
 Also, for those that don't know, pulseaudio doesn't support HFP bluetooth yet, so many true wireless earbuds (airpods, etc) do not have microphone support. So if you take a lot of video calls, this can prove to be problematic.
 
