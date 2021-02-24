@@ -26,14 +26,14 @@ const Layout = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h2>About Me</h2>
           <p>
-            If it wasn't already obvious from the url, my name is Aarron Lee.
+            Hi there, my name is Aarron Lee.
             I'm a software developer. I generally do web development, but you'll
             occasionally find me tinkering with python scripts to automate
-            boring stuff, etc.
+            boring stuff, write toy apps for fun, etc.
           </p>
           <p>
             This blog is basically a place where I'll be writing down my own
-            musings about technologies I use, new things I learn, etc.{" "}
+            musings about technologies I use, new things I learn, etc.
           </p>
           <p>
             When I'm not programming, you'll find me reading books, enjoying
