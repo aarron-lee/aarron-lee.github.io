@@ -6,6 +6,8 @@ tags: ["linux", "ryzen", "lenovo", "thinkbook"]
 excerpt: "Is 1440p display too much to ask for?"
 ---
 
+Edit: Update, I returned the Thinkbook because it had a fan issue on Linux. The issue was that the fan was controlled by the BIOS, not the OS, so it would kick in too frequently and was too loud. Everything else actually worked really well, but unfortunately, the uncontrollable fan was a dealbreaker.
+
 For the past few years, I've been using a Dell Latitude 7389 with ubuntu 20.04 installed as my primary personal/development laptop. This was initially to start transitioning away from Apple hardware due to it's extravagant price, but contrary to my expectations of a rough transition, linux on desktop has generally been a pretty great experience. I do think there are some rough edges that make desktop linux unsuitable for non-technical users (no hfp bluetooh audio support, thanks pulseaudio /s).
 
 My Dell laptop has been fairly rock solid as a reliable laptop, but with the recent advances made in performance by AMD's Ryzen 2 and 3 chips, I've been itching to upgrade to a more capable machine. The Latitude has been great, but it's 2017 i7 chip has led to terrible battery life, and I found myself wanting both a performance boost, and a screen resolution that was better than 1080p.
