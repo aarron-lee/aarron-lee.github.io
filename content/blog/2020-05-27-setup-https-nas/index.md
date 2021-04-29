@@ -95,7 +95,7 @@ Part 4: Setup Domain Name
 - Host: @, value: 127.0.0.1 (we'll change this later), TTL: Automatic
 - Host: www, value: 127.0.0.1 (same, we'll change later), TTL: Automatic
 
-![Advanced DNS setup](./dns.png)
+![Advanced DNS setup](./dns.jpg)
 5. We're going to setup dynamic DNS with [ddclient](https://github.com/ddclient/ddclient) in a Docker container. To do so, first install the docker daemon + other utils, including docker-compose (you can look up this part)
 6. Once you have docker installed, we're going to use the following `docker-compose.yml` file:
 

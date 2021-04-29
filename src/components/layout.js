@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { ThemeToggle } from '../pages/index'
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -14,9 +15,12 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Link className="header-link-home" to="/">
+          {title}
+        </Link>
+        <ThemeToggle />
+      </div>
     )
   }
 
