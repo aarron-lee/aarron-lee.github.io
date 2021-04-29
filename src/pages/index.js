@@ -1,57 +1,109 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import * as React from "react"
+import { Link, graphql } from "gatsby"
 
-import "../styles/prism-atom-dark.css"
+import Bio from "../components/bio"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import Switch from "react-switch"
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
-import styles from "./indexStyles.module.scss"
+export const ThemeToggle = () => <ThemeToggler>
+  {({ theme, toggleTheme }) => (
+    <label>
+      <Switch
+        onChange={e => toggleTheme(theme === 'light' ? 'dark' : 'light')}
+        checked={theme === 'dark'}
+        uncheckedIcon={<div className="themeSwitchStyles">D</div>}
+        checkedIcon={<div className="themeSwitchStyles">L</div>}
+        onColor={"#000"}
+        offColor={"#000"}
+      />
+    </label>
+  )}
+</ThemeToggler>
 
-import Page from "../templates/page"
-import Card from "../components/presentation/card/card"
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const posts = data.allMarkdownRemark.nodes
 
-export const query = graphql`
+  if (posts.length === 0) {
+    return (
+      <Layout location={location} title={siteTitle}>
+        <Seo title="All posts" />
+        <Bio />
+        <p>
+          No blog posts found. Add markdown posts to "content/blog" (or the
+          directory you specified for the "gatsby-source-filesystem" plugin in
+          gatsby-config.js).
+        </p>
+      </Layout>
+    )
+  }
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <Seo title="All posts" />
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <Bio />
+        <ThemeToggle />
+      </div>
+      <ol style={{ listStyle: `none` }}>
+        {posts.map(post => {
+          const title = post.frontmatter.title || post.fields.slug
+
+          return (
+            <li key={post.fields.slug}>
+              <article
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header>
+                  <h2>
+                    <Link to={post.fields.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  <small>{post.frontmatter.date}</small>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </li>
+          )
+        })}
+      </ol>
+    </Layout>
+  )
+}
+
+export default BlogIndex
+
+export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          timeToRead
-          frontmatter {
-            title
-            path
-            date(formatString: "MMMM DD, YYYY")
-            excerpt
-          }
-        }
+    site {
+      siteMetadata {
+        title
       }
-      pageInfo {
-        hasNextPage
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+        }
       }
     }
   }
 `
-
-const Layout = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges.map(edge => edge.node)
-  return (
-    <Page>
-      {posts.map((post, idx) => {
-        const { timeToRead } = post
-        const { title, path, date, excerpt } = post.frontmatter
-
-        return (
-          <Card key={idx} className={styles.cardStyles}>
-            <Link to={path}>
-              <h2 style={{ margin: "14px 0px" }}>{title}</h2>
-            </Link>
-            <h6 style={{ margin: "0" }}>
-              {date} - Time to Read: {timeToRead} min
-            </h6>
-            <p>{excerpt}</p>
-          </Card>
-        )
-      })}
-    </Page>
-  )
-}
-
-export default Layout
