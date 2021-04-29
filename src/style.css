@@ -54,7 +54,7 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-primary: rgb(115, 163, 188);
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -75,12 +75,6 @@ html {
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: var(--font-body);
-  font-size: var(--fontSize-1);
-  color: var(--color-text);
 }
 
 footer {
@@ -120,7 +114,7 @@ h6 {
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-heading);
 }
 
 h2 {
@@ -334,6 +328,9 @@ a:focus {
 
 /* dark theme styles */
 body {
+  font-family: var(--font-body);
+  font-size: var(--fontSize-1);
+  color: var(--color-text);
   --bg: white;
   --textNormal: #222;
   --textTitle: #222;
@@ -345,13 +342,16 @@ body {
 
 body.dark {
   -webkit-font-smoothing: antialiased;
-
+  color: white;
   --bg: #000;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: white;
   --textLink: yellow;
   --hr: hsla(0, 0%, 100%, 0.2);
+  --color-heading: white;
+  --color-primary: white;
 }
+
 
 .themeSwitchStyles {
   align-items: center;
