@@ -18,7 +18,7 @@ jobs:
           node-version-file: .nvmrc
       - name: Install and Build 🔧
         run: |
-          npm install
+          npm install --force --legacy-peer-deps
           npm run build
           cp CNAME ./public
 
